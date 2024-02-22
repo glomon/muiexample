@@ -17,17 +17,44 @@ spec:
             type: string
           - field: "1"
             type: json
-        rowIdField: null
         loading: false
-        height: 745.9999389648438
-        hideToolbar: false
-    - component: Image
-      name: image
+        height: 432
+        hideToolbar: true
+        density: compact
+    - component: Paper
+      name: paper
       props:
-        src:
-          $$jsExpression: imgQuery.data.message
+        elevation: 10
+      children:
+        - component: PageRow
+          name: pageRow
+          props:
+            justifyContent: start
+          children:
+            - component: Image
+              name: image
+              layout:
+                horizontalAlign: start
+                verticalAlign: start
+              props:
+                src:
+                  $$jsExpression: imgQuery.data.message
+                fit: cover
+            - component: Text
+              name: link
+              layout:
+                columnSize: 1
+                horizontalAlign: end
+                verticalAlign: end
+              props:
+                mode: link
+                value: Link do slike
+                href:
+                  $$jsExpression: imgQuery.data.message
+                openInNewTab: true
+                loading: false
   displayName: PETROL Test Page
-  display: standalone
+  display: shell
   queries:
     - name: dogQuery
       mode: query
