@@ -2,19 +2,19 @@ import * as React from "react";
 import { Typography } from "@mui/material";
 import { createComponent } from "@mui/toolpad/browser";
 
-export interface demoProps {
+export interface MyComponentProps {
   msg: string;
 }
 
-function demo({ msg }: demoProps) {
+function MyComponent({ msg }: MyComponentProps) {
   return <Typography>{msg}</Typography>;
 }
 
-export default createComponent(demo, {
+export default createComponent(MyComponent, {
   argTypes: {
     msg: {
       type: "string",
-      default: "Hello world!",
+      default: "Hello Petrol Dev Team!",
     },
   },
 });

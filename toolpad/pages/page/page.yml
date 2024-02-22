@@ -7,6 +7,59 @@ spec:
   alias:
     - afzL2D9
   content:
+    - component: Container
+      name: header
+      children:
+        - component: PageRow
+          name: pageRow1
+          props:
+            justifyContent: start
+            gap:
+              $$jsExpression: ""
+          children:
+            - component: Image
+              name: image1
+              props:
+                src: https://www.petrol.eu/webfiles/1703675865451/common/images/brand/petrol.svg
+                alt: PETROL
+                fit: contain
+                width: 158
+                height: 48
+                loading: false
+              layout:
+                columnSize: 1.6098880818099661
+                verticalAlign: center
+            - component: Text
+              name: link1
+              layout:
+                columnSize: 0.39011191819003377
+                verticalAlign: center
+                horizontalAlign: end
+              props:
+                mode: link
+                value: KONTAKTI
+                openInNewTab: false
+                href: ""
+                sx:
+                  margin-right: 20
+      props:
+        sx:
+          border: 0px solid black
+          borderRadius: 10
+    - component: Text
+      name: text
+      props:
+        value: Hello Petrol Dev Team!
+        variant: h4
+        sx:
+          margin-top: 50
+    - component: Text
+      name: text1
+      props:
+        value: This are my dogs from the supabase
+        variant: subtitle1
+        sx:
+          margin-bottom: 50
     - component: DataGrid
       name: dataGrid
       props:
@@ -19,8 +72,11 @@ spec:
             type: json
         loading: false
         height: 432
-        hideToolbar: true
+        hideToolbar: false
         density: compact
+        rowsSource: prop
+        dataProviderId: dogQuery.data;.ts:default
+        rowIdField: null
     - component: Paper
       name: paper
       props:
@@ -39,7 +95,10 @@ spec:
               props:
                 src:
                   $$jsExpression: imgQuery.data.message
-                fit: cover
+                fit: contain
+                sx:
+                  border: 10px solid black
+                  bgcolor: "#000000"
             - component: Text
               name: link
               layout:
@@ -53,8 +112,15 @@ spec:
                   $$jsExpression: imgQuery.data.message
                 openInNewTab: true
                 loading: false
+    - component: codeComponent.PetrolCard
+      name: petrolCard
+      layout:
+        columnSize: 0.488557290601938
+      props:
+        msg:
+          $$jsExpression: petrolCard.msg
   displayName: PETROL Test Page
-  display: shell
+  display: standalone
   queries:
     - name: dogQuery
       mode: query
