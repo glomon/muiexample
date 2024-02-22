@@ -19,7 +19,7 @@ spec:
             type: json
         rowIdField: null
         loading: false
-        height: 350
+        height: 745.9999389648438
         hideToolbar: false
     - component: Image
       name: image
@@ -27,7 +27,7 @@ spec:
         src:
           $$jsExpression: imgQuery.data.message
   displayName: PETROL Test Page
-  display: shell
+  display: standalone
   queries:
     - name: dogQuery
       mode: query
@@ -38,6 +38,7 @@ spec:
         method: GET
         transform: return Object.entries(data.message);
         transformEnabled: true
+        searchParams: []
     - name: imgQuery
       mode: query
       query:
