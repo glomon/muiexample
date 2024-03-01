@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "toolpad dev",
-    "build": "toolpad build --output public",
+    "build": "toolpad build",
     "start": "toolpad start"
   },
   "dependencies": {
