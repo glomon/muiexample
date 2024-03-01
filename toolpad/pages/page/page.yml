@@ -45,18 +45,20 @@ spec:
       props:
         sx:
           border: 0px solid black
-          borderRadius: 10
+          borderRadius: 0
+          margin-top: 50
     - component: Text
       name: text
       props:
         value: Hello Petrol Dev Team!
-        variant: h4
+        variant: h3
         sx:
           margin-top: 50
+        loading: false
     - component: Text
       name: text1
       props:
-        value: This are my dogs from the supabase
+        value: This are my dogs from the supabase db
         variant: subtitle1
         sx:
           margin-bottom: 50
@@ -71,54 +73,44 @@ spec:
           - field: "1"
             type: json
         loading: false
-        height: 432
+        height: 316
         hideToolbar: false
         density: compact
         rowsSource: prop
         dataProviderId: dogQuery.data;.ts:default
-        rowIdField: null
-    - component: Paper
-      name: paper
+    - component: Container
+      name: container
       props:
-        elevation: 10
+        visible: true
       children:
-        - component: PageRow
-          name: pageRow
+        - component: Image
+          name: image
+          layout:
+            columnSize: 1
+            horizontalAlign: start
+            verticalAlign: start
           props:
-            justifyContent: start
-          children:
-            - component: Image
-              name: image
-              layout:
-                horizontalAlign: start
-                verticalAlign: start
-              props:
-                src:
-                  $$jsExpression: imgQuery.data.message
-                fit: contain
-                sx:
-                  border: 10px solid black
-                  bgcolor: "#000000"
-            - component: Text
-              name: link
-              layout:
-                columnSize: 1
-                horizontalAlign: end
-                verticalAlign: end
-              props:
-                mode: link
-                value: Link do slike
-                href:
-                  $$jsExpression: imgQuery.data.message
-                openInNewTab: true
-                loading: false
-    - component: codeComponent.PetrolCard
-      name: petrolCard
-      layout:
-        columnSize: 0.488557290601938
+            src:
+              $$jsExpression: imgQuery.data.message
+            fit: cover
+            height: 300
+            loading: false
+            width: 400
+            sx:
+              width: 100%
+    - component: Text
+      name: link
       props:
-        msg:
-          $$jsExpression: petrolCard.msg
+        mode: link
+        value: Link do slike
+        href:
+          $$jsExpression: imgQuery.data.message
+        openInNewTab: true
+        loading: false
+      layout:
+        columnSize: 1.3374125874125875
+        horizontalAlign: end
+        verticalAlign: end
   displayName: PETROL Test Page
   display: standalone
   queries:
