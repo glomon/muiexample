@@ -1,0 +1,41 @@
+{
+  "files": [
+    {
+      "name": "dogQuery.data;.ts",
+      "errors": [],
+      "warnings": [],
+      "handlers": [],
+      "dataProviders": [
+        {
+          "name": "default"
+        }
+      ]
+    },
+    {
+      "name": "functions2.ts",
+      "errors": [],
+      "warnings": [],
+      "handlers": [
+        {
+          "name": "default",
+          "isCreateFunction": false,
+          "parameters": [
+            [
+              "message",
+              {
+                "type": "string",
+                "required": true
+              }
+            ]
+          ],
+          "returnType": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      ],
+      "dataProviders": []
+    }
+  ]
+}
